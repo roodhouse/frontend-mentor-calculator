@@ -1,11 +1,24 @@
 import './App.css';
+import Header from './components/Header'
+import Output from './components/Output'
+import Calc from './components/Calc'
 
 function App() {
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline">
-      Hello <span className='font-leagueSpartan text-white'>world!</span>
-    </h1>
+    <div id='mainWrapper'>
+      <div id='mainContainer'>
+        <div id='headerWrapper'>
+          <Header />
+        </div>
+        <div id='outputWrapper'>
+          <Output />
+        </div>
+        <div id='calcWrapper'>
+          <Calc />
+        </div>
+      </div>
+    </div>
     </div>
   );
 }
