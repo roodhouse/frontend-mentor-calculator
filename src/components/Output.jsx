@@ -2,7 +2,11 @@ import React from 'react'
 
 function Output() {
   return (
-    <div>Output</div>
+    <>
+      <div id="outputContainer">
+        <p>399,981</p>
+      </div>
+    </>
   )
 }
 

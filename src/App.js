@@ -8,10 +8,10 @@ function App() {
     <div className="App">
     <div id='mainWrapper'>
       <div id='mainContainer' className='h-screen px-6 py-8 bg-backgroundMainOne'>
-        <div id='headerWrapper'>
+        <div id='headerWrapper' className='mb-8'>
           <Header />
         </div>
-        <div id='outputWrapper'>
+        <div id='outputWrapper' className='mb-6'>
           <Output />
         </div>
         <div id='calcWrapper'>
