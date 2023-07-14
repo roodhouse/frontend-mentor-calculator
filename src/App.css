@@ -33,17 +33,18 @@
     background-color: #1d0934;
 }
 
-.themeOne #slideOne, .themeOne #slideTwo, .themeOne #slideThree {
+.themeOne .ball {
     background-image: url("/src/images/ball.svg");
 }
 
-.themeTwo #slideOne, .themeTwo #slideTwo, .themeTwo #slideThree {
+.themeTwo .ball {
     background-image: url("/src/images/themeTwoBall.svg");
 }
 
-.themeThree #slideOne, .themeThree #slideTwo, .themeThree #slideThree {
+.themeThree .ball {
     background-image: url("/src/images/themeThreeBall.svg");
 }
+
 
 /* Output section */
 
@@ -78,54 +79,63 @@
     background-color: #eae3dc;
     color: #434A59;
     box-shadow: 0px -4px 0px 0px #B3A497 inset;
+    cursor: pointer;
 }
 
 .themeOne .del, .themeOne .reset {
     background-color: #637097;
     color: white;
     box-shadow: 0px -4px 0px 0px #414E73 inset;
+    cursor: pointer;
 }
 
 .themeOne .equal {
     background-color: #d03f2f;
     color: white;
     box-shadow: 0px -4px 0px 0px #93261A inset;
+    cursor: pointer;
 }
 
 .themeTwo .key {
     background-color: #e5e4e1;
     color: #36362C;
     box-shadow: 0px -4px 0px 0px #A79E91 inset;
+    cursor: pointer;
 }
 
 .themeTwo .del, .themeTwo .reset {
     background-color: #377f86;
     color: white;
     box-shadow: 0px -4px 0px 0px #1B6066 inset;
+    cursor: pointer;
 }
 
 .themeTwo .equal {
     background-color: #C85402;
     color: white;
     box-shadow: 0px -4px 0px 0px #873901 inset;
+    cursor: pointer;
 }
 
 .themeThree .key {
     background-color: #331C4D;
     color: #FFE53D;
     box-shadow: 0px -4px 0px 0px #881C9E inset;
+    cursor: pointer;
 }
 
 .themeThree .del, .themeThree .reset {
     background-color: #56077C;
     color: white;
     box-shadow: 0px -4px 0px 0px #BE15F4 inset;
+    cursor: pointer;
 }
 
 .themeThree .equal {
     background-color: #00DED0;
     color: #1A2327;
     box-shadow: 0px -4px 0px 0px #6CF9F1 inset;
+    cursor: pointer;
 }
 
 

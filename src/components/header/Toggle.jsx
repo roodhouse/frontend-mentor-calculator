@@ -16,9 +16,9 @@ function Toggle() {
           </div>
         </div>
         <div id="slideContainer" className='flex rounded-[13px] h-[26px] justify-start items-center'>
-          <div id="slideOne" className='ball w-4 h-4 bg-no-repeat ml-[5px]'></div>
-          <div id="slideTwo" className='ball hidden w-4 h-4 bg-no-repeat ml-[26px]'></div>
-          <div id="slideThree" className='ball hidden w-4 h-4 bg-no-repeat ml-[50px]'></div>
+          <div id="slideOne" className='ball w-4 h-4 bg-no-repeat ml-[5px] cursor-pointer'></div>
+          <div id="slideTwo" className='w-4 h-4 bg-no-repeat ml-[7px] cursor-pointer'></div>
+          <div id="slideThree" className='w-4 h-4 bg-no-repeat ml-[5px] cursor-pointer'></div>
         </div>
       </div>
     </>

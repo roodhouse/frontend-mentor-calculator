@@ -1,13 +1,56 @@
+import React, { useState, useEffect } from 'react'
 import './App.css';
 import Header from './components/Header'
 import Output from './components/Output'
 import Calc from './components/Calc'
 
-// refactor colors
-
 function App() {
+
+  const [themeChoice, setThemeChoice] = useState('themeOne')
+  
+  // set theme
+  useEffect(() => {
+    
+    const themeOneSlide = document.getElementById('slideOne')
+    const themeTwoSlide = document.getElementById('slideTwo')
+    const themeThreeSlide = document.getElementById('slideThree')
+    const themeElements = [themeOneSlide, themeTwoSlide, themeThreeSlide] 
+
+    themeElements.forEach((element) => {
+      element.addEventListener('click', function(){
+        let elementNumber = element.id.split('slide').join('')
+        let appTheme = document.getElementById('app')
+        let theTheme = 'theme' + elementNumber
+        
+        if ( theTheme === 'themeOne' ) {
+          appTheme.classList.add('themeOne')
+          appTheme.classList.remove('themeTwo')
+          appTheme.classList.remove('themeThree')
+          themeOneSlide.classList.add('ball')
+          themeTwoSlide.classList.remove('ball')
+          themeThreeSlide.classList.remove('ball')
+        } else if ( theTheme === 'themeTwo' ) {
+          appTheme.classList.add('themeTwo')
+          appTheme.classList.remove('themeOne')
+          appTheme.classList.remove('themeThree')
+          themeTwoSlide.classList.add('ball')
+          themeOneSlide.classList.remove('ball')
+          themeThreeSlide.classList.remove('ball')
+        } else if ( theTheme === 'themeThree') {
+          appTheme.classList.add('themeThree')
+          appTheme.classList.remove('themeOne')
+          appTheme.classList.remove('themeTwo')
+          themeThreeSlide.classList.add('ball')
+          themeOneSlide.classList.remove('ball')
+          themeTwoSlide.classList.remove('ball')
+        }
+      })
+    })
+
+  },[])
+  
   return (
-    <div className="App themeOne">
+    <div id='app' className="App themeOne">
     <div id='mainWrapper'>
       <div id='mainContainer' className='h-screen px-6 py-8'>
         <div id='headerWrapper' className='mb-8'>
