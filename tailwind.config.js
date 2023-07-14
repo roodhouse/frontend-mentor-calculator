@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        leagueSpartan: 'League_Spartan'
+        leagueSpartan: 'League Spartan'
       }
     },
     colors: {
