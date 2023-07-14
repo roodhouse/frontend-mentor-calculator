@@ -7,6 +7,12 @@ import Calc from './components/Calc'
 function App() {
 
   const [themeChoice, setThemeChoice] = useState('themeOne')
+  const [theOutput, setTheOutput] = useState(0)
+  const [values, setValues] = useState([])
+  const [valueOne, setValueOne] = useState(0)
+  const [theOperation, setTheOperation] = useState('')
+
+  console.log(values)
   
   // set theme
   useEffect(() => {
@@ -48,6 +54,54 @@ function App() {
     })
 
   },[])
+
+  // calc logic
+  useEffect(() => {
+    const btnArray = Array.from(document.querySelectorAll('.btn'))
+    const operationArray = Array.from(document.querySelectorAll('.operation'))
+    
+
+    btnArray.forEach((btn) => {
+      
+      btn.addEventListener('click', function() {
+
+        let btnValue = btn.firstChild.innerHTML
+
+
+        
+        console.log(values)
+
+        if ( btnValue === 'RESET') {
+          setTheOutput(0)
+        } 
+        else if ( values.length === 0) {
+          setTheOutput('')
+          setTheOutput(btnValue)
+          values.push(btnValue)
+        }  
+        // else if ( values.length >= 1 ) {
+        //     setTheOutput(theOutput + btnValue)
+        //     console.log('in else if')
+        //     values.push(btnValue)
+        //   }
+        }
+      )
+    })
+
+    // operationArray.forEach((op) => {
+    //   op.addEventListener('click', function() {
+    //     let operationValue = op.firstChild.innerHTML
+    //     console.log(operationValue)
+    //     setTheOperation(operationValue)
+    //     if (values.length === 0) {
+    //       setTheOutput('ERROR')
+    //     } else if ( values.length > 0 ) {
+    //       values.push(operationValue)
+    //       setTheOutput(operationValue)
+    //     }
+    //   })
+    // })
+  },[])
   
   return (
     <div id='app' className="App themeOne">
@@ -57,10 +111,10 @@ function App() {
           <Header />
         </div>
         <div id='outputWrapper' className='mb-6'>
-          <Output />
+          <Output theOutput={theOutput} />
         </div>
         <div id='calcWrapper'>
-          <Calc />
+          <Calc  />
         </div>
       </div>
     </div>
