@@ -14,7 +14,7 @@ function Calc() {
           <div id="nine" className='rounded-[5px] bg-keyBackgroundOrangeOne shadow-[0px_-4px_0px_0px_#B3A497_inset] text-[#434A59] text-center font-leagueSpartan font-bold tracking-[-0.533px] pt-[13px] px-[10px] pb-[11px] w-[60px] h-[64px] text-[32px] flex justify-center items-center'>
             <p>9</p>
           </div>
-          <div id="del" className='rounded-[5px] bg-keyBackgroundBlueOne shadow-[0px_-4px_0px_0px_#414E73_inset] text-white text-center font-leagueSpartan font-bold tracking-[-0.533px] pt-[13px] px-[10px] pb-[11px] w-[60px] h-[64px] text-[20px]'>
+          <div id="del" className='rounded-[5px] bg-keyBackgroundBlueOne shadow-[0px_-4px_0px_0px_#414E73_inset] text-white text-center font-leagueSpartan font-bold tracking-[-0.533px] pt-[13px] px-[10px] pb-[11px] w-[60px] h-[64px] text-[20px] flex justify-center items-center'>
             <p>DEL</p>
           </div>
         </div>

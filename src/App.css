@@ -1,0 +1,50 @@
+/* Main Container backgrounds */
+.themeOne #mainContainer {
+    background-color: #3a4764;
+}
+
+.themeTwo #mainContainer {
+    background-color: #e6e6e6;
+}
+
+.themeThree #mainContainer {
+    background-color: #160628;
+}
+
+/* Header text color */
+
+.themeOne #logoContainer, .themeOne #themeContainer, .themeOne #oneContainer, .themeOne #twoContainer, .themeOne #threeContainer {
+    color: white;
+}
+.themeTwo #logoContainer, .themeTwo #themeContainer, .themeTwo #oneContainer, .themeTwo #twoContainer, .themeTwo #threeContainer {
+    color: #36362C;
+}
+.themeThree #logoContainer, .themeThree #themeContainer, .themeThree #oneContainer, .themeThree #twoContainer, .themeThree #threeContainer {
+    color: #FFE53D;
+}
+
+.themeOne #slideContainer {
+    background-color: #232c43;
+}
+.themeTwo #slideContainer {
+    background-color: #d1cccc;
+}
+.themeThree #slideContainer {
+    background-color: #1d0934;
+}
+
+.themeOne #slideOne, .themeOne #slideTwo, .themeOne #slideThree {
+    background-image: url("/src/images/ball.svg");
+}
+
+.themeTwo #slideOne, .themeTwo #slideTwo, .themeTwo #slideThree {
+    background-image: url("/src/images/themeTwoBall.svg");
+}
+
+.themeThree #slideOne, .themeThree #slideTwo, .themeThree #slideThree {
+    background-image: url("/src/images/themeThreeBall.svg");
+}
+
+
+
+
