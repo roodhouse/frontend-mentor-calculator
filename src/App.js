@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
     <div id='mainWrapper'>
-      <div id='mainContainer'>
+      <div id='mainContainer' className='h-screen px-6 py-8 bg-backgroundMainOne'>
         <div id='headerWrapper'>
           <Header />
         </div>
