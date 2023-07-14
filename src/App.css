@@ -45,6 +45,21 @@
     background-image: url("/src/images/themeThreeBall.svg");
 }
 
+/* Output section */
+
+.themeOne #outputContainer {
+    background-color: #182034;
+    color: white;
+}
+.themeTwo #outputContainer {
+    background-color: #ededed;
+    color: #36362C;
+}
+.themeThree #outputContainer {
+    background-color: #1E0936;
+    color: #FFE53D;
+}
+
 
 
 
