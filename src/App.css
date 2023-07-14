@@ -1,0 +1,143 @@
+/* Main Container backgrounds */
+.themeOne #mainContainer {
+    background-color: #3a4764;
+}
+
+.themeTwo #mainContainer {
+    background-color: #e6e6e6;
+}
+
+.themeThree #mainContainer {
+    background-color: #160628;
+}
+
+/* Header text color */
+
+.themeOne #logoContainer, .themeOne #themeContainer, .themeOne #oneContainer, .themeOne #twoContainer, .themeOne #threeContainer {
+    color: white;
+}
+.themeTwo #logoContainer, .themeTwo #themeContainer, .themeTwo #oneContainer, .themeTwo #twoContainer, .themeTwo #threeContainer {
+    color: #36362C;
+}
+.themeThree #logoContainer, .themeThree #themeContainer, .themeThree #oneContainer, .themeThree #twoContainer, .themeThree #threeContainer {
+    color: #FFE53D;
+}
+
+.themeOne #slideContainer {
+    background-color: #232c43;
+}
+.themeTwo #slideContainer {
+    background-color: #d1cccc;
+}
+.themeThree #slideContainer {
+    background-color: #1d0934;
+}
+
+.themeOne .ball {
+    background-image: url("/src/images/ball.svg");
+}
+
+.themeTwo .ball {
+    background-image: url("/src/images/themeTwoBall.svg");
+}
+
+.themeThree .ball {
+    background-image: url("/src/images/themeThreeBall.svg");
+}
+
+
+/* Output section */
+
+.themeOne #outputContainer {
+    background-color: #182034;
+    color: white;
+}
+.themeTwo #outputContainer {
+    background-color: #ededed;
+    color: #36362C;
+}
+.themeThree #outputContainer {
+    background-color: #1E0936;
+    color: #FFE53D;
+}
+
+/* Calc section */
+
+.themeOne #calcContainer {
+    background-color: #232c43;
+}
+
+.themeTwo #calcContainer {
+    background-color: #d1cccc;
+}
+
+.themeThree #calcContainer {
+    background-color: #1d0934;
+}
+
+.themeOne .key {
+    background-color: #eae3dc;
+    color: #434A59;
+    box-shadow: 0px -4px 0px 0px #B3A497 inset;
+    cursor: pointer;
+}
+
+.themeOne .del, .themeOne .reset {
+    background-color: #637097;
+    color: white;
+    box-shadow: 0px -4px 0px 0px #414E73 inset;
+    cursor: pointer;
+}
+
+.themeOne .equal {
+    background-color: #d03f2f;
+    color: white;
+    box-shadow: 0px -4px 0px 0px #93261A inset;
+    cursor: pointer;
+}
+
+.themeTwo .key {
+    background-color: #e5e4e1;
+    color: #36362C;
+    box-shadow: 0px -4px 0px 0px #A79E91 inset;
+    cursor: pointer;
+}
+
+.themeTwo .del, .themeTwo .reset {
+    background-color: #377f86;
+    color: white;
+    box-shadow: 0px -4px 0px 0px #1B6066 inset;
+    cursor: pointer;
+}
+
+.themeTwo .equal {
+    background-color: #C85402;
+    color: white;
+    box-shadow: 0px -4px 0px 0px #873901 inset;
+    cursor: pointer;
+}
+
+.themeThree .key {
+    background-color: #331C4D;
+    color: #FFE53D;
+    box-shadow: 0px -4px 0px 0px #881C9E inset;
+    cursor: pointer;
+}
+
+.themeThree .del, .themeThree .reset {
+    background-color: #56077C;
+    color: white;
+    box-shadow: 0px -4px 0px 0px #BE15F4 inset;
+    cursor: pointer;
+}
+
+.themeThree .equal {
+    background-color: #00DED0;
+    color: #1A2327;
+    box-shadow: 0px -4px 0px 0px #6CF9F1 inset;
+    cursor: pointer;
+}
+
+
+
+
