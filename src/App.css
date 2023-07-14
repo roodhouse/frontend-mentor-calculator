@@ -60,6 +60,74 @@
     color: #FFE53D;
 }
 
+/* Calc section */
+
+.themeOne #calcContainer {
+    background-color: #232c43;
+}
+
+.themeTwo #calcContainer {
+    background-color: #d1cccc;
+}
+
+.themeThree #calcContainer {
+    background-color: #1d0934;
+}
+
+.themeOne .key {
+    background-color: #eae3dc;
+    color: #434A59;
+    box-shadow: 0px -4px 0px 0px #B3A497 inset;
+}
+
+.themeOne .del, .themeOne .reset {
+    background-color: #637097;
+    color: white;
+    box-shadow: 0px -4px 0px 0px #414E73 inset;
+}
+
+.themeOne .equal {
+    background-color: #d03f2f;
+    color: white;
+    box-shadow: 0px -4px 0px 0px #93261A inset;
+}
+
+.themeTwo .key {
+    background-color: #e5e4e1;
+    color: #36362C;
+    box-shadow: 0px -4px 0px 0px #A79E91 inset;
+}
+
+.themeTwo .del, .themeTwo .reset {
+    background-color: #377f86;
+    color: white;
+    box-shadow: 0px -4px 0px 0px #1B6066 inset;
+}
+
+.themeTwo .equal {
+    background-color: #C85402;
+    color: white;
+    box-shadow: 0px -4px 0px 0px #873901 inset;
+}
+
+.themeThree .key {
+    background-color: #331C4D;
+    color: #FFE53D;
+    box-shadow: 0px -4px 0px 0px #881C9E inset;
+}
+
+.themeThree .del, .themeThree .reset {
+    background-color: #56077C;
+    color: white;
+    box-shadow: 0px -4px 0px 0px #BE15F4 inset;
+}
+
+.themeThree .equal {
+    background-color: #00DED0;
+    color: #1A2327;
+    box-shadow: 0px -4px 0px 0px #6CF9F1 inset;
+}
+
 
 
 
