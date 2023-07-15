@@ -1,7 +1,6 @@
 import React from 'react'
 
 function Output({ theOutput}) {
-  console.log(`from output file: ${theOutput}`)
   return (
     <>
       <div id="outputContainer" className='pr-6 pt-[29px] pb-[22px] text-right font-leagueSpartan text-[40px] font-bold tracking-[-0.667px] rounded-[10px]'>

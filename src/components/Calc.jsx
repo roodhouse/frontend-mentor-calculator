@@ -14,7 +14,7 @@ function Calc() {
           <div id="nine" className='btn key rounded-[5px] text-center font-leagueSpartan font-bold tracking-[-0.533px] pt-[13px] px-[10px] pb-[11px] w-[60px] h-[64px] text-[32px] flex justify-center items-center'>
             <p>9</p>
           </div>
-          <div id="del" className='operation del rounded-[5px] text-center font-leagueSpartan font-bold tracking-[-0.533px] pt-[13px] px-[10px] pb-[11px] w-[60px] h-[64px] text-[20px] flex justify-center items-center'>
+          <div id="del" className='del rounded-[5px] text-center font-leagueSpartan font-bold tracking-[-0.533px] pt-[13px] px-[10px] pb-[11px] w-[60px] h-[64px] text-[20px] flex justify-center items-center'>
             <p>DEL</p>
           </div>
         </div>
@@ -61,7 +61,7 @@ function Calc() {
           </div>
         </div>
         <div id="rowFive" className='flex justify-between'>
-          <div id="reset" className='btn reset rounded-[5px] text-center font-leagueSpartan font-bold tracking-[-0.533px] py-[12px] px-[22px] w-[133px] h-[64px] text-[20px] flex justify-center items-center'>
+          <div id="reset" className='reset rounded-[5px] text-center font-leagueSpartan font-bold tracking-[-0.533px] py-[12px] px-[22px] w-[133px] h-[64px] text-[20px] flex justify-center items-center'>
             <p>RESET</p>
           </div>
           <div id="equal" className='equal rounded-[5px] text-center font-leagueSpartan font-bold tracking-[-0.533px] pt-[13px] px-[10px] pb-[11px] w-[133px] h-[64px] text-[20px] flex justify-center items-center'>
