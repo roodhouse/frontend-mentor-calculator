@@ -8,15 +8,14 @@ function App() {
 
   const [themeChoice, setThemeChoice] = useState('themeOne')
   const [theOutput, setTheOutput] = useState(0)
-  const [values, setValues] = useState([])
+  // const [values, setValues] = useState([])
   const [valueOne, setValueOne] = useState(0)
   const [theOperation, setTheOperation] = useState('')
 
-  console.log(values)
   
   // set theme
   useEffect(() => {
-    
+    console.log(`the output at the top: ${theOutput}`)
     const themeOneSlide = document.getElementById('slideOne')
     const themeTwoSlide = document.getElementById('slideTwo')
     const themeThreeSlide = document.getElementById('slideThree')
@@ -59,7 +58,9 @@ function App() {
   useEffect(() => {
     const btnArray = Array.from(document.querySelectorAll('.btn'))
     const operationArray = Array.from(document.querySelectorAll('.operation'))
-    
+    const equal = document.getElementById('equal')
+    console.log(equal)
+    let values = []    
 
     btnArray.forEach((btn) => {
       
@@ -67,41 +68,84 @@ function App() {
 
         let btnValue = btn.firstChild.innerHTML
 
-
+        values.push(btnValue)
+        let strValues = values.toString('').replaceAll(',', '')
+        console.log(values, strValues)
+        setTheOutput(strValues)
         
         console.log(values)
+        console.log(values.length)
 
-        if ( btnValue === 'RESET') {
-          setTheOutput(0)
-        } 
-        else if ( values.length === 0) {
-          setTheOutput('')
-          setTheOutput(btnValue)
-          values.push(btnValue)
-        }  
-        // else if ( values.length >= 1 ) {
-        //     setTheOutput(theOutput + btnValue)
-        //     console.log('in else if')
-        //     values.push(btnValue)
-        //   }
+
         }
       )
     })
 
-    // operationArray.forEach((op) => {
-    //   op.addEventListener('click', function() {
-    //     let operationValue = op.firstChild.innerHTML
-    //     console.log(operationValue)
-    //     setTheOperation(operationValue)
-    //     if (values.length === 0) {
-    //       setTheOutput('ERROR')
-    //     } else if ( values.length > 0 ) {
-    //       values.push(operationValue)
-    //       setTheOutput(operationValue)
-    //     }
-    //   })
-    // })
+    operationArray.forEach((op) => {
+      op.addEventListener('click', function() {
+        let operationValue = op.firstChild.innerHTML
+        console.log(operationValue)
+        setTheOperation(operationValue)
+        if (values.length === 0) {
+          setTheOutput('ERROR')
+        } else if ( values.length > 0 ) {
+          values.push(operationValue)
+          let strValues = values.toString('').replaceAll(',', '')
+          setTheOutput(strValues)
+        }
+      })
+    })
+
+    equal.addEventListener('click', () => {
+      let operation;
+      values.forEach((item) => {
+        if (isNaN(item)) {
+          operation = item
+          return operation
+        }
+        function splitNumbers(values, operation) {
+          const firstNumbers = []
+          const lastNumbers = []
+          let index = 0;
+          for ( index = 0; index < values.length; index++) {
+            if ( values[index] === operation ) {
+              break;
+            }
+            firstNumbers.push(values[index]);
+          }
+          for ( index = index + 1; index < values.length; index++) {
+            lastNumbers.push(values[index]);
+          }
+          return [firstNumbers, lastNumbers]
+        }
+        let theNumbs = splitNumbers(values, operation)
+        let firstNumbs = theNumbs[0]
+        let lastNumbs = theNumbs[1]
+        firstNumbs = parseInt(firstNumbs)
+        lastNumbs = parseInt(lastNumbs)
+        
+        let total = () => {
+          const operator = operation
+          switch (operator) {
+            case "+":
+              return firstNumbs + lastNumbs;
+            case "-":
+              return firstNumbs - lastNumbs;
+            case "*":
+              return firstNumbs * lastNumbs;
+            case "/":
+              return firstNumbs / lastNumbs;
+            default:
+              return NaN;
+          }
+        }
+        console.log(total())
+        setTheOutput(total())
+      })
+    })
   },[])
+
+  
   
   return (
     <div id='app' className="App themeOne">

@@ -64,7 +64,7 @@ function Calc() {
           <div id="reset" className='btn reset rounded-[5px] text-center font-leagueSpartan font-bold tracking-[-0.533px] py-[12px] px-[22px] w-[133px] h-[64px] text-[20px] flex justify-center items-center'>
             <p>RESET</p>
           </div>
-          <div id="equal" className='operation equal rounded-[5px] text-center font-leagueSpartan font-bold tracking-[-0.533px] pt-[13px] px-[10px] pb-[11px] w-[133px] h-[64px] text-[20px] flex justify-center items-center'>
+          <div id="equal" className='equal rounded-[5px] text-center font-leagueSpartan font-bold tracking-[-0.533px] pt-[13px] px-[10px] pb-[11px] w-[133px] h-[64px] text-[20px] flex justify-center items-center'>
             <p>=</p>
           </div>
         </div>
