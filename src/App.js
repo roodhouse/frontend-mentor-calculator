@@ -4,6 +4,9 @@ import Header from './components/Header'
 import Output from './components/Output'
 import Calc from './components/Calc'
 
+// add commas every 3 digits
+// period key
+
 function App() {
 
   const [themeChoice, setThemeChoice] = useState('themeOne')
@@ -57,6 +60,7 @@ function App() {
     const equal = document.getElementById('equal')
     const reset = document.getElementById('reset')
     const del = document.getElementById('del')
+    const point = document.getElementById('point')
     
     let values = []    
 
