@@ -4,7 +4,7 @@ import Header from './components/Header'
 import Output from './components/Output'
 import Calc from './components/Calc'
 
-// add commas every 3 digits
+// connect number keys to digits
 
 function App() {
 
@@ -181,7 +181,8 @@ function App() {
                 return NaN;
             }
           }
-          setTheOutput(total().toFixed(2))
+          let theTotal = total().toLocaleString('en-US')
+          setTheOutput(theTotal)
           values = [total()]
           firstSet = []
       }
