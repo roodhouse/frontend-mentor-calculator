@@ -6,7 +6,7 @@ import Toggle from './header/Toggle'
 function Header() {
   return (
     <>
-      <div id="headerContainer" className='flex'>
+      <div id="headerContainer" className='flex sm:justify-between'>
         <div id="logoWrapper" className='mr-[130px] mt-[10px]'>
           <Logo />
         </div>
