@@ -4,8 +4,6 @@ import Header from './components/Header'
 import Output from './components/Output'
 import Calc from './components/Calc'
 
-// connect number keys to digits
-
 function App() {
 
   const [themeChoice, setThemeChoice] = useState('themeOne')
@@ -139,9 +137,7 @@ function App() {
       }
     })
 
-    // onclick of equal button
-    equal.addEventListener('click', () => {
-      // if the last item in the values array is not a number then keep the output the same
+    function onEqual() {
       if ( isNaN(values.slice(-1)) ) {
         let strValues = values.toString('').replaceAll(',', '')
         setTheOutput(strValues)
@@ -186,7 +182,10 @@ function App() {
           values = [total()]
           firstSet = []
       }
-    })
+
+    }
+    // onclick of equal button
+    equal.addEventListener('click', onEqual)
 
     // on click of the reset button
     reset.addEventListener('click', () => {
@@ -194,6 +193,57 @@ function App() {
       values = []
       setTheOutput(0)
     })
+
+    // keydown event
+    document.addEventListener('keydown', (event) => {
+      console.log(event)
+      if (!isNaN(event.key)) {
+        console.log(event.key)
+        values.push(event.key)
+        let strValues = values.toString('').replaceAll(',', '')
+        setTheOutput(strValues)
+      } if ( event.key === 'Backspace' ) {
+        // remove the last item of the array
+      values.pop()
+      // if the values array is now empty the reset the output to 0 / else set the output to the string value of the array
+      if ( values.length === 0) {
+        setTheOutput(0)
+      } else {
+        let strValues = values.toString('').replaceAll(',', '')
+        setTheOutput(strValues)
+      }
+      } if ( event.key === 'c') {
+        console.log('clear')
+        values = []
+        setTheOutput(0)
+      } if ( event.key === 'Enter' ) {
+        onEqual()
+      } if (event.key === '.') {
+        if (values.length === 0 || !values.includes('.') ) {
+          values.push(point.firstChild.innerHTML)
+        }
+      } if (( event.key === '+' && event.shiftKey ) || (event.key === '-') || (event.key === '*' && event.shiftKey) || (event.key === '/')) {
+        console.log(values)
+        console.log('add')
+        if (values.length === 0) {
+          setTheOutput('ERROR')
+        } else if ( values.length > 0 ) {
+          if ( values.includes('.')) {
+            let dotIndex = values.indexOf('.')
+            let nextIndex = dotIndex + 1
+            values[dotIndex] = values[dotIndex] + values[nextIndex]
+            values.pop(values[nextIndex])
+          } else {
+            console.log('false')
+          }
+          firstSet = values
+          values = []
+          theOp = event.key
+          setTheOutput(theOp)
+        }
+      }
+    })
+
   },[])
 
   
