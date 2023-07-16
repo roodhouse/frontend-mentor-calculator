@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/frontend-mentor-calculator/static/css/main.a1057366.css",
+    "main.js": "/frontend-mentor-calculator/static/js/main.5de15847.js",
+    "index.html": "/frontend-mentor-calculator/index.html",
+    "static/media/ball.svg": "/frontend-mentor-calculator/static/media/ball.e826926ac5b301b88bca.svg",
+    "static/media/themeThreeBall.svg": "/frontend-mentor-calculator/static/media/themeThreeBall.d31ffabcd10948f2199d.svg",
+    "static/media/themeTwoBall.svg": "/frontend-mentor-calculator/static/media/themeTwoBall.f34d9570348be960c5e4.svg",
+    "main.a1057366.css.map": "/frontend-mentor-calculator/static/css/main.a1057366.css.map",
+    "main.5de15847.js.map": "/frontend-mentor-calculator/static/js/main.5de15847.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a1057366.css",
+    "static/js/main.5de15847.js"
+  ]
+}
