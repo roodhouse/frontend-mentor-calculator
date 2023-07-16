@@ -5,7 +5,6 @@ import Output from './components/Output'
 import Calc from './components/Calc'
 
 // add commas every 3 digits
-// period key
 
 function App() {
 
@@ -62,7 +61,9 @@ function App() {
     const del = document.getElementById('del')
     const point = document.getElementById('point')
     
-    let values = []    
+    let values = []
+    let firstSet = []
+    let theOp;
 
     // add every digit to the values array on click
     btnArray.forEach((btn) => {
@@ -99,22 +100,30 @@ function App() {
     operationArray.forEach((op) => {
       op.addEventListener('click', function() {
         let operationValue = op.firstChild.innerHTML
-        setTheOperation(operationValue)
         if (values.length === 0) {
           setTheOutput('ERROR')
         } else if ( values.length > 0 ) {
-          // find the value of the last item in the values array
-          if ( isNaN(values.slice(-1)) ) {
-            // if it is NaN then replace the value with the new operation pressed
-            values.pop()
-            let strValues = values.toString('').replaceAll(',', '')
-            setTheOutput(strValues)
+          if ( values.includes('.')) {
+            let dotIndex = values.indexOf('.')
+            let nextIndex = dotIndex + 1
+            values[dotIndex] = values[dotIndex] + values[nextIndex]
+            values.pop(values[nextIndex])
+          } else {
+            console.log('false')
           }
-          values.push(operationValue)
-          let strValues = values.toString('').replaceAll(',', '')
-          setTheOutput(strValues)
+          firstSet = values
+          values = []
+          theOp = operationValue
+          setTheOutput(theOp)
         }
       })
+    })
+
+    // onclick of the decimal button
+    point.addEventListener('click', () => {
+      if (values.length === 0 || !values.includes('.') ) {
+        values.push(point.firstChild.innerHTML)
+      } 
     })
 
     // onclick of delete button
@@ -136,88 +145,53 @@ function App() {
       if ( isNaN(values.slice(-1)) ) {
         let strValues = values.toString('').replaceAll(',', '')
         setTheOutput(strValues)
-      } else if ( values.length === 1 ) {
-        // if there is only one item in the array then leave the output the same
+      } else if ( firstSet.length === 0 ) {
+        // if there is no firstSet then an operation has not been clicked
           let strValues = values.toString('').replaceAll(',', '')
           setTheOutput(strValues)
-      } else if ( values.length === 0 ) {
-        // it there are no items in the array then keep the output at 0
-          setTheOutput(0)
-      } else {
-        // if the values array has more than 2 items then run the operation
+      } else if ( firstSet.length !== 0 && values.length !== 0 ) {
+        // if both the firstSet and values array are contain values then run the operation
         let total;
-        // find and remove the operation 
-        let operation;
-        values.forEach((item) => {
-          if (isNaN(item)) {
-            operation = item
-            return operation
-          }
-          // split the numbers into separate array's based on where the operation was in the array
-          function splitNumbers(values, operation) {
-            const firstNumbers = []
-            const lastNumbers = []
-            let index = 0;
-            for ( index = 0; index < values.length; index++) {
-              // if the value is the same as the operation we have found the operator and break
-              if ( values[index] === operation ) {
-                break;
-              }
-              // if the value is not found as the operator then add the number onto the firstNumbers array
-              firstNumbers.push(values[index]);
-            }
-            for ( index = index + 1; index < values.length; index++) {
-              // since the operation has been removed all add the remaining numbers to the lastNumbers array
-              lastNumbers.push(values[index]);
-            }
-            return [firstNumbers, lastNumbers]
-          }
-          // Run the split function with operation as the separator 
-          let theNumbs = splitNumbers(values, operation)
-          // The return gives one array with 2 array values [[arrayOne], [arrayTwo]]
-          let firstNumbs = theNumbs[0]
-          let lastNumbs = theNumbs[1]
-
-          firstNumbs = firstNumbs.toString('').replaceAll(',', '')
-          lastNumbs = lastNumbs.toString('').replaceAll(',', '')
-          // Change the 2 array's into numbers
-          firstNumbs = parseInt(firstNumbs)
-          lastNumbs = parseInt(lastNumbs)
-  
+        // convert any decimal points to numbers in the values array
+        if ( values.includes('.')) {
+          let dotIndex = values.indexOf('.')
+          let nextIndex = dotIndex + 1
+          values[dotIndex] = values[dotIndex] + values[nextIndex]
+          values.pop(values[nextIndex])
+        } 
+        
+          firstSet = firstSet.toString('').replaceAll(',', '')
+          values = values.toString('').replaceAll(',', '')
+          firstSet = parseFloat(firstSet)
+          values = parseFloat(values)
           // Perform the operation 
            total = () => {
-            const operator = operation
+            const operator = theOp
             // based on the value of the operation change the equation that is run
             switch (operator) {
               case "+":
-                return firstNumbs + lastNumbs;
+                return firstSet + values;
               case "-":
-                return firstNumbs - lastNumbs;
+                return firstSet - values;
               case "*":
-                return firstNumbs * lastNumbs;
+                return firstSet * values;
               case "/":
-                return firstNumbs / lastNumbs;
+                return firstSet / values;
               default:
                 return NaN;
             }
           }
-          // set the total as the output
-          setTheOutput(total())
-        })
-        // clear the values array
-        values = []
-        // set the total as the number in the values array
-        values.push(total())
+          setTheOutput(total().toFixed(2))
+          values = [total()]
+          firstSet = []
       }
     })
 
     // on click of the reset button
     reset.addEventListener('click', () => {
-      console.log(`values at reset click ${values}`)
       // clear out everything in the values array and leave it as an empty array
       values = []
       setTheOutput(0)
-      console.log(`values after reset click ${values}`)
     })
   },[])
 
