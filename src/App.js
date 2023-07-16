@@ -6,9 +6,11 @@ import Calc from './components/Calc'
 
 function App() {
 
-  const [themeChoice, setThemeChoice] = useState('themeOne')
+  const [themeChoice, setThemeChoice] = useState(localStorage.getItem('themeChoice'))
   const [theOutput, setTheOutput] = useState(0)
   const [theOperation, setTheOperation] = useState('')
+
+  console.log(themeChoice)
 
   // set theme
   useEffect(() => {
@@ -16,6 +18,37 @@ function App() {
     const themeTwoSlide = document.getElementById('slideTwo')
     const themeThreeSlide = document.getElementById('slideThree')
     const themeElements = [themeOneSlide, themeTwoSlide, themeThreeSlide] 
+    
+    let theSavedTheme = document.getElementById('app')
+
+    if ( themeChoice === 'themeOne') {
+      theSavedTheme.classList.add('themeOne')
+      theSavedTheme.classList.remove('themeTwo')
+      theSavedTheme.classList.remove('themeThree')
+      themeOneSlide.classList.add('ball')
+      themeTwoSlide.classList.remove('ball')
+      themeThreeSlide.classList.remove('ball')
+    } else if ( themeChoice === 'themeTwo') {
+      theSavedTheme.classList.add('themeTwo')
+      theSavedTheme.classList.remove('themeOne')
+      theSavedTheme.classList.remove('themeThree')
+      themeTwoSlide.classList.add('ball')
+      themeOneSlide.classList.remove('ball')
+      themeThreeSlide.classList.remove('ball')
+    } else if ( themeChoice === 'themeThree') {
+      theSavedTheme.classList.add('themeThree')
+      theSavedTheme.classList.remove('themeOne')
+      theSavedTheme.classList.remove('themeTwo')
+      themeThreeSlide.classList.add('ball')
+      themeOneSlide.classList.remove('ball')
+      themeTwoSlide.classList.remove('ball')
+    }
+
+    // localStorage.setItem(themeChoice, 'themeOne')
+
+    // if (localStorage.getItem('themeOne')) {
+    //   console.log('themeONNNNE')
+    // }
 
     themeElements.forEach((element) => {
       element.addEventListener('click', function(){
@@ -30,6 +63,7 @@ function App() {
           themeOneSlide.classList.add('ball')
           themeTwoSlide.classList.remove('ball')
           themeThreeSlide.classList.remove('ball')
+          localStorage.setItem('themeChoice', 'themeOne')
         } else if ( theTheme === 'themeTwo' ) {
           appTheme.classList.add('themeTwo')
           appTheme.classList.remove('themeOne')
@@ -37,6 +71,7 @@ function App() {
           themeTwoSlide.classList.add('ball')
           themeOneSlide.classList.remove('ball')
           themeThreeSlide.classList.remove('ball')
+          localStorage.setItem('themeChoice', 'themeTwo')
         } else if ( theTheme === 'themeThree') {
           appTheme.classList.add('themeThree')
           appTheme.classList.remove('themeOne')
@@ -44,6 +79,7 @@ function App() {
           themeThreeSlide.classList.add('ball')
           themeOneSlide.classList.remove('ball')
           themeTwoSlide.classList.remove('ball')
+          localStorage.setItem('themeChoice', 'themeThree')
         }
       })
     })
