@@ -1,3 +1,11 @@
+.themeTwo #mainWrapper {
+    background-color: #e6e6e6;
+}
+
+.themeThree #mainWrapper {
+    background-color: #160628;
+}
+
 /* Main Container backgrounds */
 .themeOne #mainContainer {
     background-color: #3a4764;

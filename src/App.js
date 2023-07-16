@@ -272,7 +272,7 @@ function App() {
   
   
   return (
-    <div id='app' className="App themeOne lg:bg-[#3a4764]">
+    <div id='app' className="App themeOne">
     <div id='mainWrapper' className='flex items-center justify-center py-[10%] bg-[#3a4764]'>
       <div id='mainContainer' className='h-full px-6 py-8 sm:w-[540px] lg:p-0'>
         <div id='headerWrapper' className='mb-8'>
