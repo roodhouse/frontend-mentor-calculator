@@ -10,8 +10,6 @@ function App() {
   const [theOutput, setTheOutput] = useState(0)
   const [theOperation, setTheOperation] = useState('')
 
-  console.log(themeChoice)
-
   // set theme
   useEffect(() => {
     const themeOneSlide = document.getElementById('slideOne')
@@ -43,12 +41,6 @@ function App() {
       themeOneSlide.classList.remove('ball')
       themeTwoSlide.classList.remove('ball')
     }
-
-    // localStorage.setItem(themeChoice, 'themeOne')
-
-    // if (localStorage.getItem('themeOne')) {
-    //   console.log('themeONNNNE')
-    // }
 
     themeElements.forEach((element) => {
       element.addEventListener('click', function(){
@@ -232,9 +224,7 @@ function App() {
 
     // keydown event
     document.addEventListener('keydown', (event) => {
-      console.log(event)
       if (!isNaN(event.key)) {
-        console.log(event.key)
         values.push(event.key)
         let strValues = values.toString('').replaceAll(',', '')
         setTheOutput(strValues)
@@ -249,7 +239,6 @@ function App() {
         setTheOutput(strValues)
       }
       } if ( event.key === 'c') {
-        console.log('clear')
         values = []
         setTheOutput(0)
       } if ( event.key === 'Enter' ) {
@@ -259,8 +248,6 @@ function App() {
           values.push(point.firstChild.innerHTML)
         }
       } if (( event.key === '+' && event.shiftKey ) || (event.key === '-') || (event.key === '*' && event.shiftKey) || (event.key === '/')) {
-        console.log(values)
-        console.log('add')
         if (values.length === 0) {
           setTheOutput('ERROR')
         } else if ( values.length > 0 ) {
